@@ -1,1 +1,1 @@
-# https://jgoetz.netlify.app/
+# jgoetz
