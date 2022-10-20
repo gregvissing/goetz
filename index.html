@@ -1,866 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Goetz landing page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <style>
-        @charset "UTF-8";
-        body {
-        margin: 0;
-        color: #333;
-        font-family: "Open Sans", sans-serif;
-        }
-
-        .hide {
-        display: none;
-        }
-
-        .disable-scroll {
-        overflow-y: hidden;
-        }
-
-        .py-0 {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-        }
-
-        .py-1 {
-        padding-top: 0.25rem !important;
-        padding-bottom: 0.25rem !important;
-        }
-
-        .py-2 {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
-        }
-
-        .py-3 {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-        }
-
-        .py-4 {
-        padding-top: 1.5rem !important;
-        padding-bottom: 1.5rem !important;
-        }
-
-        .py-5 {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-        }
-
-        .monogram {
-        position: fixed;
-        top: 5%;
-        right: 0;
-        margin: auto;
-        }
-
-        .bold {
-        font-weight: 700;
-        }
-
-        .font-1-5 {
-        font-size: 1.5em;
-        }
-
-        .font-18 {
-        font-size: 18px;
-        }
-
-        .open-sans {
-        font-family: "Open Sans", sans-serif;
-        letter-spacing: 0.3px;
-        line-height: 28.8px;
-        }
-
-        .container {
-        max-width: 1024px !important;
-        }
-
-        ul {
-        margin: 0;
-        padding: 0;
-        }
-        ul li {
-        margin: 0;
-        }
-        ul li p {
-        margin: 0;
-        }
-
-        .text-center {
-        text-align: center;
-        }
-
-        .text-right {
-        text-align: right;
-        }
-
-        .d-flex {
-        display: flex;
-        }
-
-        .d-inline-flex {
-        display: inline-flex;
-        }
-
-        .flex-row {
-        flex-direction: row;
-        }
-
-        .flex-row-reverse {
-        flex-direction: row-reverse;
-        }
-
-        .flex-column {
-        flex-direction: column;
-        }
-
-        .flex-column-reverse {
-        flex-direction: column-reverse;
-        }
-
-        .flex-wrap {
-        flex-wrap: wrap;
-        }
-
-        .flex-nowrap {
-        flex-wrap: nowrap;
-        }
-
-        .flex-wrap-reverse {
-        flex-wrap: wrap-reverse;
-        }
-
-        .flex-justify-start {
-        justify-content: flex-start;
-        }
-
-        .flex-justify-end {
-        justify-content: flex-end;
-        }
-
-        .flex-justify-center {
-        justify-content: center;
-        }
-
-        .flex-justify-between {
-        justify-content: space-between;
-        }
-
-        .flex-justify-around {
-        justify-content: space-around;
-        }
-
-        .flex-items-start {
-        align-items: flex-start;
-        }
-
-        .flex-items-end {
-        align-items: flex-end;
-        }
-
-        .flex-items-center {
-        align-items: center;
-        }
-
-        .flex-items-baseline {
-        align-items: baseline;
-        }
-
-        .flex-items-stretch {
-        align-items: stretch;
-        }
-
-        .flex-content-start {
-        align-content: flex-start;
-        }
-
-        .flex-content-end {
-        align-content: flex-end;
-        }
-
-        .flex-content-center {
-        align-content: center;
-        }
-
-        .flex-content-between {
-        align-content: space-between;
-        }
-
-        .flex-content-around {
-        align-content: space-around;
-        }
-
-        .flex-content-stretch {
-        align-content: stretch;
-        }
-
-        .flex-self-auto {
-        align-self: auto;
-        }
-
-        .flex-self-start {
-        align-self: flex-start;
-        }
-
-        .flex-self-end {
-        align-self: flex-end;
-        }
-
-        .flex-self-center {
-        align-self: center;
-        }
-
-        .flex-self-baseline {
-        align-self: baseline;
-        }
-
-        .flex-self-stretch {
-        align-self: stretch;
-        }
-
-        .flex-order-1 {
-        order: 1;
-        }
-
-        .flex-order-2 {
-        order: 2;
-        }
-
-        .flex-order-none {
-        order: inherit;
-        }
-
-        header {
-        background-color: #e00122;
-        }
-        header svg {
-        margin: 15px 10px;
-        fill: #fff;
-        }
-        header .btn {
-        background-color: #fff;
-        padding: 7px 14px;
-        text-decoration: none;
-        text-transform: uppercase;
-        background-color: #fff;
-        color: #333;
-        padding: 7px 14px;
-        text-decoration: none;
-        text-transform: uppercase;
-        border-radius: 6px;
-        font-size: 1em;
-        font-weight: 700;
-        letter-spacing: 0.3px;
-        color: #e00122;
-        box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2);
-        }
-        @media (max-width: 550px) {
-        header {
-            padding-bottom: 15px;
-        }
-        header .flex-row {
-            flex-direction: column;
-        }
-        header .text-right {
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Goetz landing page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+        <style>
+            @charset "UTF-8";
+            body {
+            margin: 0;
+            color: #333;
+            font-family: "Open Sans", sans-serif;
+            }
+            .hide {
+            display: none;
+            }
+            .disable-scroll {
+            overflow-y: hidden;
+            }
+            .py-0 {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            }
+            .py-1 {
+            padding-top: 0.25rem !important;
+            padding-bottom: 0.25rem !important;
+            }
+            .py-2 {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+            }
+            .py-3 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+            }
+            .py-4 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+            }
+            .py-5 {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+            }
+            .monogram {
+            position: fixed;
+            top: 5%;
+            right: 0;
+            margin: auto;
+            }
+            .bold {
+            font-weight: 700;
+            }
+            .font-1-5 {
+            font-size: 1.5em;
+            }
+            .font-18 {
+            font-size: 18px;
+            }
+            .open-sans {
+            font-family: "Open Sans", sans-serif;
+            letter-spacing: 0.3px;
+            line-height: 28.8px;
+            }
+            .container {
+            max-width: 1024px !important;
+            }
+            ul {
+            margin: 0;
+            padding: 0;
+            }
+            ul li {
+            margin: 0;
+            }
+            ul li p {
+            margin: 0;
+            }
+            .text-center {
             text-align: center;
-        }
-        header svg {
+            }
+            .text-right {
+            text-align: right;
+            }
+            .d-flex {
+            display: flex;
+            }
+            .d-inline-flex {
+            display: inline-flex;
+            }
+            .flex-row {
+            flex-direction: row;
+            }
+            .flex-row-reverse {
+            flex-direction: row-reverse;
+            }
+            .flex-column {
+            flex-direction: column;
+            }
+            .flex-column-reverse {
+            flex-direction: column-reverse;
+            }
+            .flex-wrap {
+            flex-wrap: wrap;
+            }
+            .flex-nowrap {
+            flex-wrap: nowrap;
+            }
+            .flex-wrap-reverse {
+            flex-wrap: wrap-reverse;
+            }
+            .flex-justify-start {
+            justify-content: flex-start;
+            }
+            .flex-justify-end {
+            justify-content: flex-end;
+            }
+            .flex-justify-center {
+            justify-content: center;
+            }
+            .flex-justify-between {
+            justify-content: space-between;
+            }
+            .flex-justify-around {
+            justify-content: space-around;
+            }
+            .flex-items-start {
+            align-items: flex-start;
+            }
+            .flex-items-end {
+            align-items: flex-end;
+            }
+            .flex-items-center {
+            align-items: center;
+            }
+            .flex-items-baseline {
+            align-items: baseline;
+            }
+            .flex-items-stretch {
+            align-items: stretch;
+            }
+            .flex-content-start {
+            align-content: flex-start;
+            }
+            .flex-content-end {
+            align-content: flex-end;
+            }
+            .flex-content-center {
+            align-content: center;
+            }
+            .flex-content-between {
+            align-content: space-between;
+            }
+            .flex-content-around {
+            align-content: space-around;
+            }
+            .flex-content-stretch {
+            align-content: stretch;
+            }
+            .flex-self-auto {
+            align-self: auto;
+            }
+            .flex-self-start {
+            align-self: flex-start;
+            }
+            .flex-self-end {
+            align-self: flex-end;
+            }
+            .flex-self-center {
+            align-self: center;
+            }
+            .flex-self-baseline {
+            align-self: baseline;
+            }
+            .flex-self-stretch {
+            align-self: stretch;
+            }
+            .flex-order-1 {
+            order: 1;
+            }
+            .flex-order-2 {
+            order: 2;
+            }
+            .flex-order-none {
+            order: inherit;
+            }
+            header {
+            background-color: #e00122;
+            }
+            header svg {
+            margin: 15px 10px;
+            fill: #fff;
+            }
+            header .btn {
+            background-color: #fff;
+            padding: 7px 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: #fff;
+            color: #333;
+            padding: 7px 14px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            color: #e00122;
+            box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2);
+            }
+            @media (max-width: 550px) {
+            header {
+            padding-bottom: 15px;
+            }
+            header .flex-row {
+            flex-direction: column;
+            }
+            header .text-right {
+            text-align: center;
+            }
+            header svg {
             width: 275px;
             margin: 5px auto 10px;
             display: block;
-        }
-        header .column, header .columns {
+            }
+            header .column, header .columns {
             float: none;
-        }
-        }
-
-        .mobileBio.read-more {
-        color: #fff;
-        text-decoration: none;
-        padding: 5px 0 5px 5px;
-        margin-top: 5px;
-        font-size: 1em;
-        width: 98%;
-        display: block;
-        border: 1px solid #fff;
-        font-weight: bold;
-        }
-        .mobileBio.read-more span {
-        display: inline-block;
-        }
-        .mobileBio.read-more:before {
-        width: 13px;
-        height: 24px;
-        font-size: 1em;
-        font-weight: 600;
-        display: inline-block;
-        margin-right: 6px;
-        content: "+";
-        text-align: center;
-        }
-        .mobileBio.content {
-        padding: 5px;
-        border: 1px solid #fff;
-        border-top: none;
-        display: none;
-        }
-        .mobileBio.content > span {
-        display: block;
-        margin-bottom: 0.5em;
-        }
-
-        .leadershipCard__titles.open .mobileBio.read-more {
-        background-color: #fff;
-        color: #e00122;
-        }
-        .leadershipCard__titles.open .mobileBio.read-more span {
-        color: #e00122 !important;
-        }
-        .leadershipCard__titles.open .mobileBio.read-more:before {
-        content: "- ";
-        }
-        .wrapper {
-        visibility: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        }
-
-        div.pull-quote {
-        font-family: "Gentium Book Basic", serif;
-        color: #e00122;
-        max-width: 100%;
-        padding: 10px 0px 20px 0px;
-        line-height: 32px;
-        margin: 0 auto;
-        margin-bottom: 20px;
-        position: relative;
-        }
-        div.pull-quote blockquote {
-        border-left: 0;
-        margin: 0 20px;
-        padding: 0 !important;
-        color: #e00122;
-        }
-        div.pull-quote blockquote .quote {
-        font-size: 1.5em;
-        font-weight: 300;
-        line-height: 1.2;
-        padding: 0 !important;
-        color: #e00122;
-        text-indent: -32px;
-        }
-        div.pull-quote blockquote .quote:before, div.pull-quote blockquote .quote:after {
-        color: transparent;
-        font-family: "Gentium Book Basic", serif;
-        font-size: 70px;
-        position: relative;
-        top: 25px;
-        line-height: 0;
-        -webkit-text-stroke: 1px #e00122;
-        }
-        div.pull-quote blockquote .quote:before {
-        content: "“";
-        }
-        div.pull-quote blockquote .quote:after {
-        content: "”";
-        }
-        div.pull-quote .pull-quote-attribution {
-        font-size: 14px;
-        font-weight: 600;
-        color: #e00122;
-        text-align: left;
-        width: 300px;
-        float: right;
-        line-height: 1;
-        margin-right: 20px;
-        text-align: right;
-        }
-        div.pull-quote .pull-quote-attribution:before {
-        content: "–";
-        }
-
-        .tile {
-        width: 30%;
-        margin: 0 1.5%;
-        }
-        @media only screen and (max-width: 1000px) {
-        .tile {
+            }
+            }
+            .mobileBio.read-more {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 0 5px 5px;
+            margin-top: 5px;
+            font-size: 1em;
+            width: 98%;
+            display: block;
+            border: 1px solid #fff;
+            font-weight: bold;
+            }
+            .mobileBio.read-more span {
+            display: inline-block;
+            }
+            .mobileBio.read-more:before {
+            width: 13px;
+            height: 24px;
+            font-size: 1em;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 6px;
+            content: "+";
+            text-align: center;
+            }
+            .mobileBio.content {
+            padding: 5px;
+            border: 1px solid #fff;
+            border-top: none;
+            display: none;
+            }
+            .mobileBio.content > span {
+            display: block;
+            margin-bottom: 0.5em;
+            }
+            .leadershipCard__titles.open .mobileBio.read-more {
+            background-color: #fff;
+            color: #e00122;
+            }
+            .leadershipCard__titles.open .mobileBio.read-more span {
+            color: #e00122 !important;
+            }
+            .leadershipCard__titles.open .mobileBio.read-more:before {
+            content: "- ";
+            }
+            .wrapper {
+            visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+            div.pull-quote {
+            font-family: "Gentium Book Basic", serif;
+            color: #e00122;
+            max-width: 100%;
+            padding: 10px 0px 20px 0px;
+            line-height: 32px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            position: relative;
+            }
+            div.pull-quote blockquote {
+            border-left: 0;
+            margin: 0 20px;
+            padding: 0 !important;
+            color: #e00122;
+            }
+            div.pull-quote blockquote .quote {
+            font-size: 1.5em;
+            font-weight: 300;
+            line-height: 1.2;
+            padding: 0 !important;
+            color: #e00122;
+            text-indent: -32px;
+            }
+            div.pull-quote blockquote .quote:before, div.pull-quote blockquote .quote:after {
+            color: transparent;
+            font-family: "Gentium Book Basic", serif;
+            font-size: 70px;
+            position: relative;
+            top: 25px;
+            line-height: 0;
+            -webkit-text-stroke: 1px #e00122;
+            }
+            div.pull-quote blockquote .quote:before {
+            content: "“";
+            }
+            div.pull-quote blockquote .quote:after {
+            content: "”";
+            }
+            div.pull-quote .pull-quote-attribution {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e00122;
+            text-align: left;
+            width: 300px;
+            float: right;
+            line-height: 1;
+            margin-right: 20px;
+            text-align: right;
+            }
+            div.pull-quote .pull-quote-attribution:before {
+            content: "–";
+            }
+            .tile {
+            width: 30%;
+            margin: 0 1.5%;
+            }
+            @media only screen and (max-width: 1000px) {
+            .tile {
             width: 50%;
             margin: 0;
-        }
-        }
-        @media only screen and (max-width: 600px) {
-        .tile {
+            }
+            }
+            @media only screen and (max-width: 600px) {
+            .tile {
             width: 100%;
             margin: 0;
-        }
-        }
-        .tile .faces {
-        width: 95%;
-        height: 285px;
-        transform-style: preserve-3d;
-        margin: 1em auto;
-        cursor: pointer;
-        }
-        @media only screen and (max-device-width: 600px) {
-        .tile .faces {
+            }
+            }
+            .tile .faces {
+            width: 95%;
+            height: 285px;
+            transform-style: preserve-3d;
+            margin: 1em auto;
+            cursor: pointer;
+            }
+            @media only screen and (max-device-width: 600px) {
+            .tile .faces {
             height: 500px;
-        }
-        }
-        .tile .faces .face {
-        border: 1px solid #000;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        backface-visibility: hidden;
-        }
-        .tile .faces .face.front {
-        background: #fff;
-        /*added for mobile browsers*/
-        transform: translateZ(1px);
-        }
-        .tile .faces .face.front * {
-        backface-visibility: hidden;
-        }
-        .tile .faces .face.front p {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        text-align: left;
-        padding: 1em;
-        }
-        .tile .faces .face.back {
-        transform: rotateY(180deg);
-        color: white;
-        }
-        .tile .faces .face.back .image {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 5em;
-        background-size: cover;
-        background-position: center;
-        }
-        .tile .faces .face.back .image img {
-        width: 100%;
-        }
-        .tile .faces .face.back .content {
-        background-color: #e00122;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 10px;
-        }
-        .tile .faces .face.back .content p {
-        font-family: "Open Sans", sans-serif;
-        color: #fff;
-        margin: 0;
-        text-align: left;
-        }
-        .tile .faces .face.back .content p:first-child {
-        font-size: 1.5em;
-        font-weight: 700;
-        }
-
-        .leadershipContainer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        }
-
-        .leadershipCard {
-        background: #e00122;
-        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        visibility: hidden;
-        width: 32%;
-        margin: 1em 0;
-        }
-        @media only screen and (max-width: 1000px) {
-        .leadershipCard {
-            width: 48%;
-        }
-        }
-        @media only screen and (max-width: 800px) {
-        .leadershipCard {
+            }
+            }
+            .tile .faces .face {
+            border: 1px solid #000;
             width: 100%;
-        }
-        }
-        .leadershipCard__headshot img {
-        width: 100%;
-        height: auto;
-        }
-        .leadershipCard__titles {
-        padding: 1em;
-        font-family: "Open Sans", sans-serif;
-        }
-        .leadershipCard__titles h3 {
-        font-weight: 800;
-        margin: 0;
-        color: #fff;
-        font-size: 1.5em;
-        }
-        .leadershipCard__titles p {
-        color: #fff;
-        margin: 0;
-        }
-        .leadershipCard__titles .mobileBio iframe {
-        width: 100%;
-        }
-        .leadershipCard__titles .mobileBio * {
-        color: #fff !important;
-        }
-        @media (min-width: 800px) {
-        .leadershipCard__titles .mobileBio {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            backface-visibility: hidden;
+            }
+            .tile .faces .face.front {
+            background: #fff;
+            /*added for mobile browsers*/
+            transform: translateZ(1px);
+            }
+            .tile .faces .face.front * {
+            backface-visibility: hidden;
+            }
+            .tile .faces .face.front p {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: left;
+            padding: 1em;
+            }
+            .tile .faces .face.back {
+            transform: rotateY(180deg);
+            color: white;
+            }
+            .tile .faces .face.back .image {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 5em;
+            background-size: cover;
+            background-position: center;
+            }
+            .tile .faces .face.back .image img {
+            width: 100%;
+            }
+            .tile .faces .face.back .content {
+            background-color: #e00122;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 10px;
+            }
+            .tile .faces .face.back .content p {
+            font-family: "Open Sans", sans-serif;
+            color: #fff;
+            margin: 0;
+            text-align: left;
+            }
+            .tile .faces .face.back .content p:first-child {
+            font-size: 1.5em;
+            font-weight: 700;
+            }
+            .leadershipContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            }
+            .leadershipCard {
+            background: #e00122;
+            box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            visibility: hidden;
+            width: 32%;
+            margin: 1em 0;
+            }
+            @media only screen and (max-width: 1000px) {
+            .leadershipCard {
+            width: 48%;
+            }
+            }
+            @media only screen and (max-width: 800px) {
+            .leadershipCard {
+            width: 100%;
+            }
+            }
+            .leadershipCard__headshot img {
+            width: 100%;
+            height: auto;
+            }
+            .leadershipCard__titles {
+            padding: 1em;
+            font-family: "Open Sans", sans-serif;
+            }
+            .leadershipCard__titles h3 {
+            font-weight: 800;
+            margin: 0;
+            color: #fff;
+            font-size: 1.5em;
+            }
+            .leadershipCard__titles p {
+            color: #fff;
+            margin: 0;
+            }
+            .leadershipCard__titles .mobileBio iframe {
+            width: 100%;
+            }
+            .leadershipCard__titles .mobileBio * {
+            color: #fff !important;
+            }
+            @media (min-width: 800px) {
+            .leadershipCard__titles .mobileBio {
             display: none;
-        }
-        }
-
-        .leadershipExpandedContainer {
-        font-family: "Open Sans", sans-serif;
-        background: #fff;
-        visibility: hidden;
-        position: fixed;
-        z-index: 1000;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 1024px;
-        height: 80vh;
-        display: flex;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        /* &__headshot {
+            }
+            }
+            .leadershipExpandedContainer {
+            font-family: "Open Sans", sans-serif;
+            background: #fff;
+            visibility: hidden;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1024px;
+            height: 80vh;
+            display: flex;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            /* &__headshot {
             img {
-                max-width: 375px;
-                height: auto;
+            max-width: 375px;
+            height: auto;
             }
-        } */
-        }
-        .leadershipExpandedContainer__bio {
-        background: #fff;
-        padding: 7rem 3rem 3rem !important;
-        position: relative;
-        width: 100%;
-        }
-        .leadershipExpandedContainer__bio .name {
-        font-weight: 800;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        background-color: #000;
-        color: #fff;
-        padding: 0.25em 1em;
-        margin: 0;
-        width: 100%;
-        }
-        .leadershipExpandedContainer__bio .title {
-        font-weight: 600;
-        font-size: 1.5rem;
-        }
-        .leadershipExpandedContainer__bio .bio {
-        margin: 0;
-        padding-bottom: 1em;
-        }
-        .leadershipExpandedContainer__bio .player {
-        margin-bottom: 1rem;
-        }
-        .leadershipExpandedContainer__bio p {
-        margin-bottom: 0.25rem;
-        }
-
-        .social-media li {
-        margin-right: 2em;
-        }
-        .social-media li:last-child {
-        margin: 0;
-        }
-        .social-media a {
-        font-size: 1.5em;
-        }
-
-        footer {
-        margin-top: 1.5em;
-        padding: 3em 0;
-        border-top: 5px solid #e00122;
-        background: #000;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        }
-        footer * {
-        color: #fff;
-        font-family: "Open Sans", sans-serif;
-        }
-    </style>
-</head>
-<body>
-  <header>
-    <div class="container d-flex flex-row flex-nowrap flex-justify-between">
-      <div class="four columns">
-        <svg xmlns="http://www.w3.org/2000/svg" class="svg svg-logo" viewBox="0 0 779.13 135.83">
-        <title>University of Cincinnati</title>
-        <g class="logo-name" data-name="Layer 1">
-            <path d="M176.66,70.93c0-24.66,17.27-41.48,42.5-41.48,10.68,0,19.77,2.84,28,8.86l-6.25,8.86a37.4,37.4,0,0,0-22-7.27c-18.29,0-31,12.61-31,31s12.73,31,31,31a37.4,37.4,0,0,0,22-7.27l6.25,8.86c-8.18,6-17.27,8.86-28,8.86C193.93,112.41,176.66,95.59,176.66,70.93Z"></path>
-            <path d="M269.49,110.71H259.27V31.16h10.23Z"></path>
-            <path d="M336.42,81.5a31.1,31.1,0,0,1,6.25,8.86l.45-.11A69.63,69.63,0,0,1,342,75.93V31.16h10.23v80.68h-.91L302.79,60.37a36.42,36.42,0,0,1-6.25-8.86l-.34.11c.68,3.07,1,7.73,1,14.2v44.88H287V30h1Z"></path>
-            <path d="M365.28,70.93c0-24.66,17.27-41.48,42.5-41.48,10.68,0,19.77,2.84,28,8.86l-6.25,8.86a37.4,37.4,0,0,0-22-7.27c-18.29,0-31,12.61-31,31s12.73,31,31,31a37.4,37.4,0,0,0,22-7.27l6.25,8.86c-8.18,6-17.27,8.86-28,8.86C382.56,112.41,365.28,95.59,365.28,70.93Z"></path>
-            <path d="M458.12,110.71H447.89V31.16h10.23Z"></path>
-            <path d="M525,81.5a31.1,31.1,0,0,1,6.25,8.86l.45-.11a69.63,69.63,0,0,1-1.14-14.32V31.16h10.23v80.68h-.91L491.41,60.37a36.42,36.42,0,0,1-6.25-8.86l-.34.11c.68,3.07,1,7.73,1,14.2v44.88H475.62V30h1Z"></path>
-            <path d="M607.88,81.5a31.1,31.1,0,0,1,6.25,8.86l.45-.11a69.63,69.63,0,0,1-1.14-14.32V31.16h10.23v80.68h-.91L574.25,60.37A36.42,36.42,0,0,1,568,51.5l-.34.11c.68,3.07,1,7.73,1,14.2v44.88H558.46V30h1Z"></path>
-            <path d="M668.68,29.46h1.14L707,110.71H695.49l-9.89-22.27H652.88L643,110.71H631.52Zm-6.59,50.23H676.4a61.06,61.06,0,0,1,6.36.23l.11-.11a26.82,26.82,0,0,1-3.52-6.48l-7-16.59a43.38,43.38,0,0,1-2.84-9.32H669a43.38,43.38,0,0,1-2.84,9.32l-7,16.59a26.75,26.75,0,0,1-3.52,6.48l.11.11A61,61,0,0,1,662.09,79.68Z"></path>
-            <path d="M756.74,40.94H736.4a7.25,7.25,0,0,1-3-.34l-.11.23a7.92,7.92,0,0,1,.34,2.73v67.16H723.45V43.55a7.92,7.92,0,0,1,.34-2.73l-.23-.23a6.67,6.67,0,0,1-2.84.34H700.27V31.16h56.47Z"></path>
-            <path d="M779.13,110.71H768.9V31.16h10.23Z"></path>
-        </g>
-        <g class="logo-symbol" data-name="Layer 2">
-            <rect id="_Path_" data-name="<Path>" x="74.96" y="0.04" width="25.95" height="7.57"></rect>
-            <path id="_Path_2" data-name="<Path>" d="M55.78,73.58c0-20.66,12.08-37.37,29.93-46.74V16.68c-25.65,8.4-44,30.08-44,56.9,0,13.26,3.46,23.62,9.48,32.9-15.86-2.79-22.69-13.85-22.69-32.9V0H0V7.57H13.6v66c0,26.44,17.24,40.18,43.47,40.61a66.94,66.94,0,0,0,40.36,21.24c1.27.19,2.49.32,3.49.41v-7.52c-1.3-.22-2.2-.44-2.2-.44C74,121.59,55.78,100.55,55.78,73.58Z"></path>
-            <path id="_Path_3" data-name="<Path>" d="M115.78,73.58V20.33c17.55,0,28.08,10.44,28.65,22.4L151,44l4.57-26.64-7.77-1.51-.95,5.68c-14-7.05-25.78-8.33-37.47-8.33a71.19,71.19,0,0,0-8.46.5l.06,59.85c0,11.64-1.68,18.51-7.64,25.84C86.74,92.18,85.7,84,85.7,73.58c0-5.53,0-31.87,0-31.87C77,50.12,71.57,60.57,71.57,73.58c0,27.2,21,48.45,46.64,48.45,8.8,0,18.95-2.15,26.35-7.19L142.7,112c-10,5.1-30.28,6.29-42.68-5.31C110.5,99,115.78,89.1,115.78,73.58Z"></path>
-        </g>
-        </svg>
-      </div>
-      <div class="two columns">
-        <a href="#">FINANCIAL</a>
-      </div>
-    </div>
-  </header>
-  <main class="demo">
-    <section>
-      <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut orci consequat, bibendum risus eu, volutpat diam. Donec posuere pretium risus sit amet viverra. Maecenas ultrices, lorem sed faucibus dignissim, tellus ligula sollicitudin tellus, non condimentum ligula neque vel magna. Nullam mi dolor, volutpat at fringilla ut, fringilla vel risus. Aenean dictum velit eget tellus dictum tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi.</p>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="tiles flex">
-          <div class="tile">Engineering</div>
-          <div class="tile">Marian Spencer</div>
-          <div class="tile">CO-OP</div>
-          <div class="tile">Entrepreneurship</div>
-          <div class="tile">Athletics</div>
-          <div class="tile">facilities</div>
-          <div class="tile">Karl/CIO</div>
-          <div class="tile">President</div>
-          <div class="tile">9th Tile</div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-        <div class="container">
-            <h3 class="text-center open-sans font-1-5 bold">Contact Us</h3>
-        </div>
-        <div class="container d-flex flex-row flex-nowrap flex-justify-between py-5">
-            <div class="four columns">
-                <ul>
-                    <li>
-                        <p><strong>The University of Cincinnati Foundation</strong><br>
-                            PO Box 19970 Cincinnati, OH 45219
-                        </p>
-                    </li>
-                </ul>
+            } */
+            }
+            .leadershipExpandedContainer__bio {
+            background: #fff;
+            padding: 7rem 3rem 3rem !important;
+            position: relative;
+            width: 100%;
+            }
+            .leadershipExpandedContainer__bio .name {
+            font-weight: 800;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            background-color: #000;
+            color: #fff;
+            padding: 0.25em 1em;
+            margin: 0;
+            width: 100%;
+            }
+            .leadershipExpandedContainer__bio .title {
+            font-weight: 600;
+            font-size: 1.5rem;
+            }
+            .leadershipExpandedContainer__bio .bio {
+            margin: 0;
+            padding-bottom: 1em;
+            }
+            .leadershipExpandedContainer__bio .player {
+            margin-bottom: 1rem;
+            }
+            .leadershipExpandedContainer__bio p {
+            margin-bottom: 0.25rem;
+            }
+            .social-media li {
+            margin-right: 2em;
+            }
+            .social-media li:last-child {
+            margin: 0;
+            }
+            .social-media a {
+            font-size: 1.5em;
+            }
+            footer {
+            margin-top: 1.5em;
+            padding: 3em 0;
+            border-top: 5px solid #e00122;
+            background: #000;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            }
+            footer * {
+            color: #fff;
+            font-family: "Open Sans", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container d-flex flex-row flex-nowrap flex-justify-between">
+                <div class="four columns">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="svg svg-logo" viewBox="0 0 779.13 135.83">
+                        <title>University of Cincinnati</title>
+                        <g class="logo-name" data-name="Layer 1">
+                            <path d="M176.66,70.93c0-24.66,17.27-41.48,42.5-41.48,10.68,0,19.77,2.84,28,8.86l-6.25,8.86a37.4,37.4,0,0,0-22-7.27c-18.29,0-31,12.61-31,31s12.73,31,31,31a37.4,37.4,0,0,0,22-7.27l6.25,8.86c-8.18,6-17.27,8.86-28,8.86C193.93,112.41,176.66,95.59,176.66,70.93Z"></path>
+                            <path d="M269.49,110.71H259.27V31.16h10.23Z"></path>
+                            <path d="M336.42,81.5a31.1,31.1,0,0,1,6.25,8.86l.45-.11A69.63,69.63,0,0,1,342,75.93V31.16h10.23v80.68h-.91L302.79,60.37a36.42,36.42,0,0,1-6.25-8.86l-.34.11c.68,3.07,1,7.73,1,14.2v44.88H287V30h1Z"></path>
+                            <path d="M365.28,70.93c0-24.66,17.27-41.48,42.5-41.48,10.68,0,19.77,2.84,28,8.86l-6.25,8.86a37.4,37.4,0,0,0-22-7.27c-18.29,0-31,12.61-31,31s12.73,31,31,31a37.4,37.4,0,0,0,22-7.27l6.25,8.86c-8.18,6-17.27,8.86-28,8.86C382.56,112.41,365.28,95.59,365.28,70.93Z"></path>
+                            <path d="M458.12,110.71H447.89V31.16h10.23Z"></path>
+                            <path d="M525,81.5a31.1,31.1,0,0,1,6.25,8.86l.45-.11a69.63,69.63,0,0,1-1.14-14.32V31.16h10.23v80.68h-.91L491.41,60.37a36.42,36.42,0,0,1-6.25-8.86l-.34.11c.68,3.07,1,7.73,1,14.2v44.88H475.62V30h1Z"></path>
+                            <path d="M607.88,81.5a31.1,31.1,0,0,1,6.25,8.86l.45-.11a69.63,69.63,0,0,1-1.14-14.32V31.16h10.23v80.68h-.91L574.25,60.37A36.42,36.42,0,0,1,568,51.5l-.34.11c.68,3.07,1,7.73,1,14.2v44.88H558.46V30h1Z"></path>
+                            <path d="M668.68,29.46h1.14L707,110.71H695.49l-9.89-22.27H652.88L643,110.71H631.52Zm-6.59,50.23H676.4a61.06,61.06,0,0,1,6.36.23l.11-.11a26.82,26.82,0,0,1-3.52-6.48l-7-16.59a43.38,43.38,0,0,1-2.84-9.32H669a43.38,43.38,0,0,1-2.84,9.32l-7,16.59a26.75,26.75,0,0,1-3.52,6.48l.11.11A61,61,0,0,1,662.09,79.68Z"></path>
+                            <path d="M756.74,40.94H736.4a7.25,7.25,0,0,1-3-.34l-.11.23a7.92,7.92,0,0,1,.34,2.73v67.16H723.45V43.55a7.92,7.92,0,0,1,.34-2.73l-.23-.23a6.67,6.67,0,0,1-2.84.34H700.27V31.16h56.47Z"></path>
+                            <path d="M779.13,110.71H768.9V31.16h10.23Z"></path>
+                        </g>
+                        <g class="logo-symbol" data-name="Layer 2">
+                            <rect id="_Path_" data-name="<Path>" x="74.96" y="0.04" width="25.95" height="7.57"></rect>
+                            <path id="_Path_2" data-name="<Path>" d="M55.78,73.58c0-20.66,12.08-37.37,29.93-46.74V16.68c-25.65,8.4-44,30.08-44,56.9,0,13.26,3.46,23.62,9.48,32.9-15.86-2.79-22.69-13.85-22.69-32.9V0H0V7.57H13.6v66c0,26.44,17.24,40.18,43.47,40.61a66.94,66.94,0,0,0,40.36,21.24c1.27.19,2.49.32,3.49.41v-7.52c-1.3-.22-2.2-.44-2.2-.44C74,121.59,55.78,100.55,55.78,73.58Z"></path>
+                            <path id="_Path_3" data-name="<Path>" d="M115.78,73.58V20.33c17.55,0,28.08,10.44,28.65,22.4L151,44l4.57-26.64-7.77-1.51-.95,5.68c-14-7.05-25.78-8.33-37.47-8.33a71.19,71.19,0,0,0-8.46.5l.06,59.85c0,11.64-1.68,18.51-7.64,25.84C86.74,92.18,85.7,84,85.7,73.58c0-5.53,0-31.87,0-31.87C77,50.12,71.57,60.57,71.57,73.58c0,27.2,21,48.45,46.64,48.45,8.8,0,18.95-2.15,26.35-7.19L142.7,112c-10,5.1-30.28,6.29-42.68-5.31C110.5,99,115.78,89.1,115.78,73.58Z"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="two columns">
+                    <a href="#">FINANCIAL</a>
+                </div>
             </div>
-            <div class="four columns">
-                <ul>
-                    <li>
-                        <p><a href="tel:513-556-6781">513-556-6781</a> | <a href="tel:888-556-8889">888-556-8889</a></p>
-                        <p>513-556-4300 (fax)</p>
-                    </li>
-                    <li>
-                        <a href="mailto:ucfoundation@uc.edu%3C">ucfoundation@uc.edu</a>
-                    </li>
-                </ul>
+        </header>
+        <main class="demo">
+            <section>
+                <div class="container">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut orci consequat, bibendum risus eu, volutpat diam. Donec posuere pretium risus sit amet viverra. Maecenas ultrices, lorem sed faucibus dignissim, tellus ligula sollicitudin tellus, non condimentum ligula neque vel magna. Nullam mi dolor, volutpat at fringilla ut, fringilla vel risus. Aenean dictum velit eget tellus dictum tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi.</p>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="tiles flex">
+                        <div class="tile">Engineering</div>
+                        <div class="tile">Marian Spencer</div>
+                        <div class="tile">CO-OP</div>
+                        <div class="tile">Entrepreneurship</div>
+                        <div class="tile">Athletics</div>
+                        <div class="tile">facilities</div>
+                        <div class="tile">Karl/CIO</div>
+                        <div class="tile">President</div>
+                        <div class="tile">9th Tile</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <h3 class="text-center open-sans font-1-5 bold">Contact Us</h3>
             </div>
-            <div class="four columns">
-                <ul>
-                    <li>
-                        <a href="https://www.google.com/maps/place/University+Hall,+51+Goodman+St,+Cincinnati,+OH+45221/data=!4m2!3m1!1s0x8841b3911b29ad97:0x4622207f542bf00f?sa=X&amp;ved=2ahUKEwjCmLHvtI_lAhXylOAKHdzrBBMQ8gEwAHoECAkQAQ"><strong>University
-                        Hall</strong>, Suite 100<br>
-                        51 Goodman Drive<br>
-                        Cincinnati, OH 45219</a>
-                    </li>
-                </ul>
+            <div class="container d-flex flex-row flex-nowrap flex-justify-between py-5">
+                <div class="four columns">
+                    <ul>
+                        <li>
+                            <p><strong>The University of Cincinnati Foundation</strong><br>
+                                PO Box 19970 Cincinnati, OH 45219
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="four columns">
+                    <ul>
+                        <li>
+                            <p><a href="tel:513-556-6781">513-556-6781</a> | <a href="tel:888-556-8889">888-556-8889</a></p>
+                            <p>513-556-4300 (fax)</p>
+                        </li>
+                        <li>
+                            <a href="mailto:ucfoundation@uc.edu%3C">ucfoundation@uc.edu</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="four columns">
+                    <ul>
+                        <li>
+                            <a href="https://www.google.com/maps/place/University+Hall,+51+Goodman+St,+Cincinnati,+OH+45221/data=!4m2!3m1!1s0x8841b3911b29ad97:0x4622207f542bf00f?sa=X&amp;ved=2ahUKEwjCmLHvtI_lAhXylOAKHdzrBBMQ8gEwAHoECAkQAQ"><strong>University
+                            Hall</strong>, Suite 100<br>
+                            51 Goodman Drive<br>
+                            Cincinnati, OH 45219</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="column">
-                <ul class="navbar-list social-media d-flex">
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="https://www.instagram.com/uofcincy/?hl=en">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span class="sr-only">Instagram</span>
-                        </a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="https://www.facebook.com/uofcincyfoundation/">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <span class="sr-only">Facebook</span>
-                        </a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="https://www.youtube.com/channel/UC1P9AxltYh6kPLO6Swt4Qcw">
-                        <i class="fa-brands fa-youtube"></i>
-                        <span class="sr-only">Youtube</span>
-                        </a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="https://twitter.com/uofcincyfound">
-                        <i class="fa-brands fa-twitter"></i>
-                        <span class="sr-only">Twitter</span>
-                        </a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="navbar-link" href="https://www.linkedin.com/company/uofcincyfound/">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        <span class="sr-only">LinkedIn</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="container">
+                <div class="column">
+                    <ul class="navbar-list social-media d-flex">
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="https://www.instagram.com/uofcincy/?hl=en">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span class="sr-only">Instagram</span>
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="https://www.facebook.com/uofcincyfoundation/">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <span class="sr-only">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="https://www.youtube.com/channel/UC1P9AxltYh6kPLO6Swt4Qcw">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span class="sr-only">Youtube</span>
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="https://twitter.com/uofcincyfound">
+                            <i class="fa-brands fa-twitter"></i>
+                            <span class="sr-only">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="https://www.linkedin.com/company/uofcincyfound/">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span class="sr-only">LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="column">
-                <p class="text-center">Copyright Information © 2022 University of Cincinnati</p>
+            <div class="container">
+                <div class="column">
+                    <p class="text-center">Copyright Information © 2022 University of Cincinnati</p>
+                </div>
             </div>
-        </div>
-    </footer>
-    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://assets.codepen.io/16327/Flip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script>
-        window.addEventListener("load", () => {
-            const headshots = gsap.utils.toArray(".leadershipCard"),
-                expandedContainer = document.querySelector(".leadershipExpandedContainer"),
-                expandedBioContainer = document.querySelector(".leadershipExpandedContainer__bio"),
-                expandedImage = document.querySelector(".leadershipExpandedContainer__headshot img"),
-                expandedName = document.querySelector(".leadershipExpandedContainer__bio .name"),
-                // expandedTitle = document.querySelector(".leadershipExpandedContainer__bio .title"),
-                expandedBio = document.querySelector(".leadershipExpandedContainer__bio .bio"),
-                expandedBioMobile = document.querySelector(".leadershipCard__titles .mobileBio.read-more")
-        
-            let activeHeadshot;
+        </footer>
+        <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://assets.codepen.io/16327/Flip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            window.addEventListener("load", () => {
+                const headshots = gsap.utils.toArray(".leadershipCard"),
+                    expandedContainer = document.querySelector(".leadershipExpandedContainer"),
+                    expandedBioContainer = document.querySelector(".leadershipExpandedContainer__bio"),
+                    expandedImage = document.querySelector(".leadershipExpandedContainer__headshot img"),
+                    expandedName = document.querySelector(".leadershipExpandedContainer__bio .name"),
+                    // expandedTitle = document.querySelector(".leadershipExpandedContainer__bio .title"),
+                    expandedBio = document.querySelector(".leadershipExpandedContainer__bio .bio"),
+                    expandedBioMobile = document.querySelector(".leadershipCard__titles .mobileBio.read-more")
             
-            // expandedBioMobile.addEventListener("click", () => {
-            // 	console.log(this);
-            // 	return;
-            // });
-            $(".leadershipCard__titles .mobileBio.read-more").on("click", function(e) {
-                e.preventDefault();
-                $(this).next().slideToggle();
-                $(this).parent().toggleClass("open");
-            });
-        
-            gsap.set(expandedBioContainer, {xPercent:15, opacity:0});
-        
-            function expandHeadshot(card) {
-                // If someone clicks on element behind expanded headshot, then we should 
-                // just close the currently expanded headshot
-                if (activeHeadshot) {
-                    return closeHeadshot()
-                }
-        
-                // If we"re on a small screen, just return. The bios are expanded via css
-                if (window.innerWidth < 800) {
-                    return;
-                }
-        
-                // When the image in the detail DOM is loaded, we run the GSAP flip stuff.
-                // Anything outside this function isn"t related to FLIPing the headshot
-                const onload = () => {
-                    
-                    // Position the expanded container on top of the headshot.
-                    // Make sure to use fitChild on the image so that"s what looks like
-                    // it"s growing. 
-                    Flip.fit(expandedContainer, card, {scale: true, fitChild: expandedImage})
-        
-                    // Record the state that everything is in.
-                    const state = Flip.getState(expandedContainer);
-        
-                    // Set the final state
-                    gsap.set(expandedContainer, {clearProps: true});
-                    gsap.set(expandedContainer, {visibility: "visible"});
-        
-                    Flip.from(state, {
-                        duration: 0.75,
-                        scale: true,
-                        ease: "power2.inOut",
-                        absolute: true
-                    }).to(expandedBioContainer, {xPercent: 0, opacity:1}, .75)
-        
-                    expandedImage.removeEventListener("load", onload);
-                    document.addEventListener("click", closeHeadshot);
-        
-                }
+                let activeHeadshot;
                 
-                // Change image and text
-                const data = card.dataset;
-                expandedImage.addEventListener("load", onload);
-                expandedImage.src = data.headshot;
-                expandedName.innerText = data.name;
-                // expandedTitle.innerText = data.titles;
-                expandedBio.innerHTML = data.bio;
-        
-                // Fade out the other items
-                gsap.to(headshots, {opacity:0.3, stagger: { amount: 0.7, from: headshots.indexOf(card), grid: "auto" }});
-                activeHeadshot = card;
-                document.body.classList.add("disable-scroll");
-        
-            }
-        
-            function closeHeadshot() {
-                console.log("Closing headshot");
-                document.removeEventListener("click", closeHeadshot);
-        
-                // Record current state
-                const state = Flip.getState(expandedContainer);
-        
-                // Scale details down so that it"s image fits exactly on top of the active headshot
-                Flip.fit(expandedContainer, activeHeadshot, {scale: true, fitChild: expandedImage});
-        
-                // Put the bio container back and then fade in the other headshots
-                const tl = gsap.timeline();
-                tl.to(expandedBioContainer, {xPercent: 15, opacity: 0})
-                .to(expandedContainer, {visibility: "hidden"})
-                .to(headshots, {opacity:1, stagger: {amount: 0.7, from: headshots.indexOf(activeHeadshot), grid: "auto"}});
-                Flip.from(state, {
-                    scale: true,
-                    duration: 0.5,
-                    delay: 0.2
-                })
-                activeHeadshot = null;
-                document.body.classList.remove("disable-scroll");
-            }
-        
-            // Add click events
-            gsap.utils.toArray(".leadershipCard").forEach(item => {
-                item.addEventListener("click", () => {
-                    expandHeadshot(item);
+                // expandedBioMobile.addEventListener("click", () => {
+                // 	console.log(this);
+                // 	return;
+                // });
+                $(".leadershipCard__titles .mobileBio.read-more").on("click", function(e) {
+                    e.preventDefault();
+                    $(this).next().slideToggle();
+                    $(this).parent().toggleClass("open");
                 });
+            
+                gsap.set(expandedBioContainer, {xPercent:15, opacity:0});
+            
+                function expandHeadshot(card) {
+                    // If someone clicks on element behind expanded headshot, then we should 
+                    // just close the currently expanded headshot
+                    if (activeHeadshot) {
+                        return closeHeadshot()
+                    }
+            
+                    // If we"re on a small screen, just return. The bios are expanded via css
+                    if (window.innerWidth < 800) {
+                        return;
+                    }
+            
+                    // When the image in the detail DOM is loaded, we run the GSAP flip stuff.
+                    // Anything outside this function isn"t related to FLIPing the headshot
+                    const onload = () => {
+                        
+                        // Position the expanded container on top of the headshot.
+                        // Make sure to use fitChild on the image so that"s what looks like
+                        // it"s growing. 
+                        Flip.fit(expandedContainer, card, {scale: true, fitChild: expandedImage})
+            
+                        // Record the state that everything is in.
+                        const state = Flip.getState(expandedContainer);
+            
+                        // Set the final state
+                        gsap.set(expandedContainer, {clearProps: true});
+                        gsap.set(expandedContainer, {visibility: "visible"});
+            
+                        Flip.from(state, {
+                            duration: 0.75,
+                            scale: true,
+                            ease: "power2.inOut",
+                            absolute: true
+                        }).to(expandedBioContainer, {xPercent: 0, opacity:1}, .75)
+            
+                        expandedImage.removeEventListener("load", onload);
+                        document.addEventListener("click", closeHeadshot);
+            
+                    }
+                    
+                    // Change image and text
+                    const data = card.dataset;
+                    expandedImage.addEventListener("load", onload);
+                    expandedImage.src = data.headshot;
+                    expandedName.innerText = data.name;
+                    // expandedTitle.innerText = data.titles;
+                    expandedBio.innerHTML = data.bio;
+            
+                    // Fade out the other items
+                    gsap.to(headshots, {opacity:0.3, stagger: { amount: 0.7, from: headshots.indexOf(card), grid: "auto" }});
+                    activeHeadshot = card;
+                    document.body.classList.add("disable-scroll");
+            
+                }
+            
+                function closeHeadshot() {
+                    console.log("Closing headshot");
+                    document.removeEventListener("click", closeHeadshot);
+            
+                    // Record current state
+                    const state = Flip.getState(expandedContainer);
+            
+                    // Scale details down so that it"s image fits exactly on top of the active headshot
+                    Flip.fit(expandedContainer, activeHeadshot, {scale: true, fitChild: expandedImage});
+            
+                    // Put the bio container back and then fade in the other headshots
+                    const tl = gsap.timeline();
+                    tl.to(expandedBioContainer, {xPercent: 15, opacity: 0})
+                    .to(expandedContainer, {visibility: "hidden"})
+                    .to(headshots, {opacity:1, stagger: {amount: 0.7, from: headshots.indexOf(activeHeadshot), grid: "auto"}});
+                    Flip.from(state, {
+                        scale: true,
+                        duration: 0.5,
+                        delay: 0.2
+                    })
+                    activeHeadshot = null;
+                    document.body.classList.remove("disable-scroll");
+                }
+            
+                // Add click events
+                gsap.utils.toArray(".leadershipCard").forEach(item => {
+                    item.addEventListener("click", () => {
+                        expandHeadshot(item);
+                    });
+                });
+            
+                gsap.set(".leadershipCard", {autoAlpha: 1});
+                gsap.from(".leadershipCard", {opacity:0, yPercent:30, stagger: 0.14})
             });
-        
-            gsap.set(".leadershipCard", {autoAlpha: 1});
-            gsap.from(".leadershipCard", {opacity:0, yPercent:30, stagger: 0.14})
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
