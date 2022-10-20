@@ -667,9 +667,200 @@
     </section>
   </main>
   <footer>
-    <div class="container">
-      <h3>Contact Us</h3>
-    </div>
-  </footer>
-  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+        <div class="container">
+            <h3 class="text-center open-sans font-1-5 bold">Contact Us</h3>
+        </div>
+        <div class="container d-flex flex-row flex-nowrap flex-justify-between py-5">
+            <div class="four columns">
+                <ul>
+                    <li>
+                        <p><strong>The University of Cincinnati Foundation</strong><br>
+                            PO Box 19970 Cincinnati, OH 45219
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="four columns">
+                <ul>
+                    <li>
+                        <p><a href="tel:513-556-6781">513-556-6781</a> | <a href="tel:888-556-8889">888-556-8889</a></p>
+                        <p>513-556-4300 (fax)</p>
+                    </li>
+                    <li>
+                        <a href="mailto:ucfoundation@uc.edu%3C">ucfoundation@uc.edu</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="four columns">
+                <ul>
+                    <li>
+                        <a href="https://www.google.com/maps/place/University+Hall,+51+Goodman+St,+Cincinnati,+OH+45221/data=!4m2!3m1!1s0x8841b3911b29ad97:0x4622207f542bf00f?sa=X&amp;ved=2ahUKEwjCmLHvtI_lAhXylOAKHdzrBBMQ8gEwAHoECAkQAQ"><strong>University
+                        Hall</strong>, Suite 100<br>
+                        51 Goodman Drive<br>
+                        Cincinnati, OH 45219</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="column">
+                <ul class="navbar-list social-media d-flex">
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="https://www.instagram.com/uofcincy/?hl=en">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span class="sr-only">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="https://www.facebook.com/uofcincyfoundation/">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="https://www.youtube.com/channel/UC1P9AxltYh6kPLO6Swt4Qcw">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span class="sr-only">Youtube</span>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="https://twitter.com/uofcincyfound">
+                        <i class="fa-brands fa-twitter"></i>
+                        <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="https://www.linkedin.com/company/uofcincyfound/">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="column">
+                <p class="text-center">Copyright Information © 2022 University of Cincinnati</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://assets.codepen.io/16327/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            const headshots = gsap.utils.toArray(".leadershipCard"),
+                expandedContainer = document.querySelector(".leadershipExpandedContainer"),
+                expandedBioContainer = document.querySelector(".leadershipExpandedContainer__bio"),
+                expandedImage = document.querySelector(".leadershipExpandedContainer__headshot img"),
+                expandedName = document.querySelector(".leadershipExpandedContainer__bio .name"),
+                // expandedTitle = document.querySelector(".leadershipExpandedContainer__bio .title"),
+                expandedBio = document.querySelector(".leadershipExpandedContainer__bio .bio"),
+                expandedBioMobile = document.querySelector(".leadershipCard__titles .mobileBio.read-more")
+        
+            let activeHeadshot;
+            
+            // expandedBioMobile.addEventListener("click", () => {
+            // 	console.log(this);
+            // 	return;
+            // });
+            $(".leadershipCard__titles .mobileBio.read-more").on("click", function(e) {
+                e.preventDefault();
+                $(this).next().slideToggle();
+                $(this).parent().toggleClass("open");
+            });
+        
+            gsap.set(expandedBioContainer, {xPercent:15, opacity:0});
+        
+            function expandHeadshot(card) {
+                // If someone clicks on element behind expanded headshot, then we should 
+                // just close the currently expanded headshot
+                if (activeHeadshot) {
+                    return closeHeadshot()
+                }
+        
+                // If we"re on a small screen, just return. The bios are expanded via css
+                if (window.innerWidth < 800) {
+                    return;
+                }
+        
+                // When the image in the detail DOM is loaded, we run the GSAP flip stuff.
+                // Anything outside this function isn"t related to FLIPing the headshot
+                const onload = () => {
+                    
+                    // Position the expanded container on top of the headshot.
+                    // Make sure to use fitChild on the image so that"s what looks like
+                    // it"s growing. 
+                    Flip.fit(expandedContainer, card, {scale: true, fitChild: expandedImage})
+        
+                    // Record the state that everything is in.
+                    const state = Flip.getState(expandedContainer);
+        
+                    // Set the final state
+                    gsap.set(expandedContainer, {clearProps: true});
+                    gsap.set(expandedContainer, {visibility: "visible"});
+        
+                    Flip.from(state, {
+                        duration: 0.75,
+                        scale: true,
+                        ease: "power2.inOut",
+                        absolute: true
+                    }).to(expandedBioContainer, {xPercent: 0, opacity:1}, .75)
+        
+                    expandedImage.removeEventListener("load", onload);
+                    document.addEventListener("click", closeHeadshot);
+        
+                }
+                
+                // Change image and text
+                const data = card.dataset;
+                expandedImage.addEventListener("load", onload);
+                expandedImage.src = data.headshot;
+                expandedName.innerText = data.name;
+                // expandedTitle.innerText = data.titles;
+                expandedBio.innerHTML = data.bio;
+        
+                // Fade out the other items
+                gsap.to(headshots, {opacity:0.3, stagger: { amount: 0.7, from: headshots.indexOf(card), grid: "auto" }});
+                activeHeadshot = card;
+                document.body.classList.add("disable-scroll");
+        
+            }
+        
+            function closeHeadshot() {
+                console.log("Closing headshot");
+                document.removeEventListener("click", closeHeadshot);
+        
+                // Record current state
+                const state = Flip.getState(expandedContainer);
+        
+                // Scale details down so that it"s image fits exactly on top of the active headshot
+                Flip.fit(expandedContainer, activeHeadshot, {scale: true, fitChild: expandedImage});
+        
+                // Put the bio container back and then fade in the other headshots
+                const tl = gsap.timeline();
+                tl.to(expandedBioContainer, {xPercent: 15, opacity: 0})
+                .to(expandedContainer, {visibility: "hidden"})
+                .to(headshots, {opacity:1, stagger: {amount: 0.7, from: headshots.indexOf(activeHeadshot), grid: "auto"}});
+                Flip.from(state, {
+                    scale: true,
+                    duration: 0.5,
+                    delay: 0.2
+                })
+                activeHeadshot = null;
+                document.body.classList.remove("disable-scroll");
+            }
+        
+            // Add click events
+            gsap.utils.toArray(".leadershipCard").forEach(item => {
+                item.addEventListener("click", () => {
+                    expandHeadshot(item);
+                });
+            });
+        
+            gsap.set(".leadershipCard", {autoAlpha: 1});
+            gsap.from(".leadershipCard", {opacity:0, yPercent:30, stagger: 0.14})
+        });
+    </script>
 </body>
+</html>
