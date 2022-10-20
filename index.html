@@ -1,43 +1,618 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-  <style>
-    .d-flex { display: flex; }
-    .d-inline-flex { display: inline-flex; }
-    .flex-row            { flex-direction: row; }
-    .flex-row-reverse    { flex-direction: row-reverse; }
-    .flex-column         { flex-direction: column; }
-    .flex-column-reverse { flex-direction: column-reverse; }
-    .flex-wrap           { flex-wrap: wrap; }
-    .flex-nowrap         { flex-wrap: nowrap; }
-    .flex-wrap-reverse   { flex-wrap: wrap-reverse; }
-    .flex-justify-start    { justify-content: flex-start; }
-    .flex-justify-end      { justify-content: flex-end; }
-    .flex-justify-center   { justify-content: center; }
-    .flex-justify-between  { justify-content: space-between; }
-    .flex-justify-around   { justify-content: space-around; }
-    .flex-items-start      { align-items: flex-start; }
-    .flex-items-end        { align-items: flex-end; }
-    .flex-items-center     { align-items: center; }
-    .flex-items-baseline   { align-items: baseline; }
-    .flex-items-stretch    { align-items: stretch; }
-    .flex-content-start    { align-content: flex-start; }
-    .flex-content-end      { align-content: flex-end; }
-    .flex-content-center   { align-content: center; }
-    .flex-content-between  { align-content: space-between; }
-    .flex-content-around   { align-content: space-around; }
-    .flex-content-stretch  { align-content: stretch; }
-    .flex-self-auto        { align-self: auto; }
-    .flex-self-start       { align-self: flex-start; }
-    .flex-self-end         { align-self: flex-end; }
-    .flex-self-center      { align-self: center; }
-    .flex-self-baseline    { align-self: baseline; }
-    .flex-self-stretch     { align-self: stretch; }
-    .flex-order-1    { order: 1; }
-    .flex-order-2    { order: 2; }
-    .flex-order-none { order: inherit; }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Goetz landing page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        @charset "UTF-8";
+        body {
+        margin: 0;
+        color: #333;
+        font-family: "Open Sans", sans-serif;
+        }
+
+        .hide {
+        display: none;
+        }
+
+        .disable-scroll {
+        overflow-y: hidden;
+        }
+
+        .py-0 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        }
+
+        .py-1 {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+        }
+
+        .py-2 {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        }
+
+        .py-3 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        }
+
+        .py-4 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+        }
+
+        .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+        }
+
+        .monogram {
+        position: fixed;
+        top: 5%;
+        right: 0;
+        margin: auto;
+        }
+
+        .bold {
+        font-weight: 700;
+        }
+
+        .font-1-5 {
+        font-size: 1.5em;
+        }
+
+        .font-18 {
+        font-size: 18px;
+        }
+
+        .open-sans {
+        font-family: "Open Sans", sans-serif;
+        letter-spacing: 0.3px;
+        line-height: 28.8px;
+        }
+
+        .container {
+        max-width: 1024px !important;
+        }
+
+        ul {
+        margin: 0;
+        padding: 0;
+        }
+        ul li {
+        margin: 0;
+        }
+        ul li p {
+        margin: 0;
+        }
+
+        .text-center {
+        text-align: center;
+        }
+
+        .text-right {
+        text-align: right;
+        }
+
+        .d-flex {
+        display: flex;
+        }
+
+        .d-inline-flex {
+        display: inline-flex;
+        }
+
+        .flex-row {
+        flex-direction: row;
+        }
+
+        .flex-row-reverse {
+        flex-direction: row-reverse;
+        }
+
+        .flex-column {
+        flex-direction: column;
+        }
+
+        .flex-column-reverse {
+        flex-direction: column-reverse;
+        }
+
+        .flex-wrap {
+        flex-wrap: wrap;
+        }
+
+        .flex-nowrap {
+        flex-wrap: nowrap;
+        }
+
+        .flex-wrap-reverse {
+        flex-wrap: wrap-reverse;
+        }
+
+        .flex-justify-start {
+        justify-content: flex-start;
+        }
+
+        .flex-justify-end {
+        justify-content: flex-end;
+        }
+
+        .flex-justify-center {
+        justify-content: center;
+        }
+
+        .flex-justify-between {
+        justify-content: space-between;
+        }
+
+        .flex-justify-around {
+        justify-content: space-around;
+        }
+
+        .flex-items-start {
+        align-items: flex-start;
+        }
+
+        .flex-items-end {
+        align-items: flex-end;
+        }
+
+        .flex-items-center {
+        align-items: center;
+        }
+
+        .flex-items-baseline {
+        align-items: baseline;
+        }
+
+        .flex-items-stretch {
+        align-items: stretch;
+        }
+
+        .flex-content-start {
+        align-content: flex-start;
+        }
+
+        .flex-content-end {
+        align-content: flex-end;
+        }
+
+        .flex-content-center {
+        align-content: center;
+        }
+
+        .flex-content-between {
+        align-content: space-between;
+        }
+
+        .flex-content-around {
+        align-content: space-around;
+        }
+
+        .flex-content-stretch {
+        align-content: stretch;
+        }
+
+        .flex-self-auto {
+        align-self: auto;
+        }
+
+        .flex-self-start {
+        align-self: flex-start;
+        }
+
+        .flex-self-end {
+        align-self: flex-end;
+        }
+
+        .flex-self-center {
+        align-self: center;
+        }
+
+        .flex-self-baseline {
+        align-self: baseline;
+        }
+
+        .flex-self-stretch {
+        align-self: stretch;
+        }
+
+        .flex-order-1 {
+        order: 1;
+        }
+
+        .flex-order-2 {
+        order: 2;
+        }
+
+        .flex-order-none {
+        order: inherit;
+        }
+
+        header {
+        background-color: #e00122;
+        }
+        header svg {
+        margin: 15px 10px;
+        fill: #fff;
+        }
+        header .btn {
+        background-color: #fff;
+        padding: 7px 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: #fff;
+        color: #333;
+        padding: 7px 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 6px;
+        font-size: 1em;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        color: #e00122;
+        box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 550px) {
+        header {
+            padding-bottom: 15px;
+        }
+        header .flex-row {
+            flex-direction: column;
+        }
+        header .text-right {
+            text-align: center;
+        }
+        header svg {
+            width: 275px;
+            margin: 5px auto 10px;
+            display: block;
+        }
+        header .column, header .columns {
+            float: none;
+        }
+        }
+
+        .mobileBio.read-more {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 0 5px 5px;
+        margin-top: 5px;
+        font-size: 1em;
+        width: 98%;
+        display: block;
+        border: 1px solid #fff;
+        font-weight: bold;
+        }
+        .mobileBio.read-more span {
+        display: inline-block;
+        }
+        .mobileBio.read-more:before {
+        width: 13px;
+        height: 24px;
+        font-size: 1em;
+        font-weight: 600;
+        display: inline-block;
+        margin-right: 6px;
+        content: "+";
+        text-align: center;
+        }
+        .mobileBio.content {
+        padding: 5px;
+        border: 1px solid #fff;
+        border-top: none;
+        display: none;
+        }
+        .mobileBio.content > span {
+        display: block;
+        margin-bottom: 0.5em;
+        }
+
+        .leadershipCard__titles.open .mobileBio.read-more {
+        background-color: #fff;
+        color: #e00122;
+        }
+        .leadershipCard__titles.open .mobileBio.read-more span {
+        color: #e00122 !important;
+        }
+        .leadershipCard__titles.open .mobileBio.read-more:before {
+        content: "- ";
+        }
+        .wrapper {
+        visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        div.pull-quote {
+        font-family: "Gentium Book Basic", serif;
+        color: #e00122;
+        max-width: 100%;
+        padding: 10px 0px 20px 0px;
+        line-height: 32px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        position: relative;
+        }
+        div.pull-quote blockquote {
+        border-left: 0;
+        margin: 0 20px;
+        padding: 0 !important;
+        color: #e00122;
+        }
+        div.pull-quote blockquote .quote {
+        font-size: 1.5em;
+        font-weight: 300;
+        line-height: 1.2;
+        padding: 0 !important;
+        color: #e00122;
+        text-indent: -32px;
+        }
+        div.pull-quote blockquote .quote:before, div.pull-quote blockquote .quote:after {
+        color: transparent;
+        font-family: "Gentium Book Basic", serif;
+        font-size: 70px;
+        position: relative;
+        top: 25px;
+        line-height: 0;
+        -webkit-text-stroke: 1px #e00122;
+        }
+        div.pull-quote blockquote .quote:before {
+        content: "“";
+        }
+        div.pull-quote blockquote .quote:after {
+        content: "”";
+        }
+        div.pull-quote .pull-quote-attribution {
+        font-size: 14px;
+        font-weight: 600;
+        color: #e00122;
+        text-align: left;
+        width: 300px;
+        float: right;
+        line-height: 1;
+        margin-right: 20px;
+        text-align: right;
+        }
+        div.pull-quote .pull-quote-attribution:before {
+        content: "–";
+        }
+
+        .tile {
+        width: 30%;
+        margin: 0 1.5%;
+        }
+        @media only screen and (max-width: 1000px) {
+        .tile {
+            width: 50%;
+            margin: 0;
+        }
+        }
+        @media only screen and (max-width: 600px) {
+        .tile {
+            width: 100%;
+            margin: 0;
+        }
+        }
+        .tile .faces {
+        width: 95%;
+        height: 285px;
+        transform-style: preserve-3d;
+        margin: 1em auto;
+        cursor: pointer;
+        }
+        @media only screen and (max-device-width: 600px) {
+        .tile .faces {
+            height: 500px;
+        }
+        }
+        .tile .faces .face {
+        border: 1px solid #000;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        backface-visibility: hidden;
+        }
+        .tile .faces .face.front {
+        background: #fff;
+        /*added for mobile browsers*/
+        transform: translateZ(1px);
+        }
+        .tile .faces .face.front * {
+        backface-visibility: hidden;
+        }
+        .tile .faces .face.front p {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: left;
+        padding: 1em;
+        }
+        .tile .faces .face.back {
+        transform: rotateY(180deg);
+        color: white;
+        }
+        .tile .faces .face.back .image {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 5em;
+        background-size: cover;
+        background-position: center;
+        }
+        .tile .faces .face.back .image img {
+        width: 100%;
+        }
+        .tile .faces .face.back .content {
+        background-color: #e00122;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+        }
+        .tile .faces .face.back .content p {
+        font-family: "Open Sans", sans-serif;
+        color: #fff;
+        margin: 0;
+        text-align: left;
+        }
+        .tile .faces .face.back .content p:first-child {
+        font-size: 1.5em;
+        font-weight: 700;
+        }
+
+        .leadershipContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        }
+
+        .leadershipCard {
+        background: #e00122;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        visibility: hidden;
+        width: 32%;
+        margin: 1em 0;
+        }
+        @media only screen and (max-width: 1000px) {
+        .leadershipCard {
+            width: 48%;
+        }
+        }
+        @media only screen and (max-width: 800px) {
+        .leadershipCard {
+            width: 100%;
+        }
+        }
+        .leadershipCard__headshot img {
+        width: 100%;
+        height: auto;
+        }
+        .leadershipCard__titles {
+        padding: 1em;
+        font-family: "Open Sans", sans-serif;
+        }
+        .leadershipCard__titles h3 {
+        font-weight: 800;
+        margin: 0;
+        color: #fff;
+        font-size: 1.5em;
+        }
+        .leadershipCard__titles p {
+        color: #fff;
+        margin: 0;
+        }
+        .leadershipCard__titles .mobileBio iframe {
+        width: 100%;
+        }
+        .leadershipCard__titles .mobileBio * {
+        color: #fff !important;
+        }
+        @media (min-width: 800px) {
+        .leadershipCard__titles .mobileBio {
+            display: none;
+        }
+        }
+
+        .leadershipExpandedContainer {
+        font-family: "Open Sans", sans-serif;
+        background: #fff;
+        visibility: hidden;
+        position: fixed;
+        z-index: 1000;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 1024px;
+        height: 80vh;
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        /* &__headshot {
+            img {
+                max-width: 375px;
+                height: auto;
+            }
+        } */
+        }
+        .leadershipExpandedContainer__bio {
+        background: #fff;
+        padding: 7rem 3rem 3rem !important;
+        position: relative;
+        width: 100%;
+        }
+        .leadershipExpandedContainer__bio .name {
+        font-weight: 800;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: #000;
+        color: #fff;
+        padding: 0.25em 1em;
+        margin: 0;
+        width: 100%;
+        }
+        .leadershipExpandedContainer__bio .title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        }
+        .leadershipExpandedContainer__bio .bio {
+        margin: 0;
+        padding-bottom: 1em;
+        }
+        .leadershipExpandedContainer__bio .player {
+        margin-bottom: 1rem;
+        }
+        .leadershipExpandedContainer__bio p {
+        margin-bottom: 0.25rem;
+        }
+
+        .social-media li {
+        margin-right: 2em;
+        }
+        .social-media li:last-child {
+        margin: 0;
+        }
+        .social-media a {
+        font-size: 1.5em;
+        }
+
+        footer {
+        margin-top: 1.5em;
+        padding: 3em 0;
+        border-top: 5px solid #e00122;
+        background: #000;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        }
+        footer * {
+        color: #fff;
+        font-family: "Open Sans", sans-serif;
+        }
+    </style>
 </head>
 <body>
   <header>
